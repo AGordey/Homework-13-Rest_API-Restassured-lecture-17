@@ -21,7 +21,7 @@ public class reqres_test extends reqresEndpoints {
     }
 
     @Test
-    @DisplayName("First API test - GET method")
+    @DisplayName("Test with GET method")
     void checkApiEndpoint1() {
 
         given()
@@ -36,7 +36,7 @@ public class reqres_test extends reqresEndpoints {
     }
 
     @Test
-    @DisplayName("Second API test - POST method")
+    @DisplayName("Test with POST method")
     void checkApiEndpoint2() {
         String body = "{ \"email\": \"eve.holt@reqres.in\", \"password\": \"pistol\" }";
 
@@ -54,7 +54,7 @@ public class reqres_test extends reqresEndpoints {
     }
 
     @Test
-    @DisplayName("Third API test - PUT method")
+    @DisplayName("Test with PUT method")
     void checkApiEndpoint3() {
         String body = "{ \"name\": \"morpheus\", \"job\": \"zion resident\" }";
 
@@ -74,7 +74,7 @@ public class reqres_test extends reqresEndpoints {
     }
 
     @Test
-    @DisplayName("Fourth API test - PATCH method")
+    @DisplayName("Test with PATCH method")
     void checkApiEndpoint4() {
         String body = "{ \"name\": \"morpheus\", \"job\": \"zion resident\" }";
 
@@ -83,7 +83,7 @@ public class reqres_test extends reqresEndpoints {
                 .when()
                 .body(body)
                 .contentType(JSON)
-                .patch(putUpdateApi)
+                .patch(patchUpdateApi)
                 .then()
                 .log().status()
                 .statusCode(200)
@@ -94,13 +94,13 @@ public class reqres_test extends reqresEndpoints {
     }
 
     @Test
-    @DisplayName("Fifth API test - DELETE method")
+    @DisplayName("Test with DELETE method")
     void checkApiEndpoint5() {
 
         given()
                 .log().uri()
                 .when()
-                .delete(putUpdateApi)
+                .delete(deleteApi)
                 .then()
                 .log().status()
                 .statusCode(204);
