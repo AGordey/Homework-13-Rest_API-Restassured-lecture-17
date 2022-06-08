@@ -5,19 +5,16 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.Date;
-
 import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class reqres_test extends reqresEndpoints {
+public class ReqresTest extends ReqresEndpoints {
 
     @BeforeAll
     static void setUp() {
-        RestAssured.baseURI = "https://reqres.in/";
+        RestAssured.baseURI = "https://reqres.in/api/";
     }
 
     @Test
